@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" href="./Image/Logo.jpeg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description" content="Hotel Killedar - Authentic family restaurant serving Indian, Chinese, and fusion cuisine. Reserve a table for a memorable dining experience." />
+  <meta name="theme-color" content="#1a1a1a" />
+  <meta property="og:title" content="Hotel Killedar | Authentic Taste, Family Tradition" />
+  <meta property="og:description" content="Where every meal feels like home. Premium Indian & Chinese cuisine in a warm family atmosphere." />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1200" />
+  <meta property="og:type" content="restaurant" />
+  <title>Hotel Killedar | Authentic Taste, Family Tradition</title>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Restaurant",
+      "name": "Hotel Killedar",
+      "description": "Authentic family restaurant serving Indian & Chinese cuisine.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Opp. Kudal Bus Stand, Near Kudal Court",
+        "addressLocality": "Kudal",
+        "addressRegion": "Maharashtra",
+        "postalCode": "416519"
+      },
+      "telephone": "+91 9422947316",
+      "servesCuisine": ["Indian", "Chinese"],
+      "priceRange": "$$"
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Playfair Display', 'serif'],
+            body: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            gold: '#c9a24d',
+            'warm-orange': '#d97742',
+            cream: '#fdfaf5',
+            'dark-brown': '#3b2c24',
+            'soft-black': '#1c1c1c',
+          },
+          backdropBlur: { xs: '2px' },
+          animation: {
+            'float': 'float 5s ease-in-out infinite',
+            'fade-up': 'fadeUp 0.8s ease-out forwards',
+            'scale-in': 'scaleIn 0.4s ease-out',
+          },
+          keyframes: {
+            float: { '0%, 100%': { transform: 'translateY(0px)' }, '50%': { transform: 'translateY(-12px)' } },
+            fadeUp: { '0%': { opacity: '0', transform: 'translateY(20px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } },
+            scaleIn: { '0%': { opacity: '0', transform: 'scale(0.95)' }, '100%': { opacity: '1', transform: 'scale(1)' } }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    * { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: #fdfaf5; transition: background 0.3s, color 0.3s; }
+    .dark body, .dark { background: #1c1c1c; }
+    .glass-card {
+      background: rgba(255, 248, 240, 0.7);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(201, 162, 77, 0.2);
+      box-shadow: 0 20px 35px rgba(0,0,0,0.08);
+    }
+    .dark .glass-card {
+      background: rgba(30, 30, 30, 0.75);
+      border-color: rgba(201, 162, 77, 0.3);
+      color: #f0e6d3;
+    }
+    .hover-lift { transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.3s; }
+    .hover-lift:hover { transform: translateY(-8px); box-shadow: 0 28px 40px rgba(0,0,0,0.18); }
+    .menu-img { transition: transform 0.5s ease; }
+    .menu-card:hover .menu-img { transform: scale(1.05); }
+    .dark .text-dark-brown { color: #f0e6d3; }
+    .dark .bg-cream { background: #2a2a2a; }
+    .swiper-pagination-bullet-active { background: #c9a24d !important; }
+    @media (max-width: 768px) {
+      .hero-text { font-size: 2.8rem; }
+    }
+  </style>
+</head>
+<body class="font-body text-dark-brown dark:text-cream bg-cream dark:bg-soft-black transition-colors duration-500">
+  <div id="app">
+    <!-- Sticky Navbar -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-500 bg-transparent py-4 px-6 flex justify-between items-center" style="backdrop-filter: blur(0px);">
+      <div class="text-2xl font-display font-bold text-gold tracking-wide drop-shadow-lg">Hotel Killedar</div>
+      <div class="hidden md:flex space-x-8 text-cream font-medium text-shadow-sm">
+        <a href="#home" class="hover:text-gold transition">Home</a>
+        <a href="#about" class="hover:text-gold transition">About</a>
+        <a href="#menu" class="hover:text-gold transition">Menu</a>
+        <a href="#gallery" class="hover:text-gold transition">Gallery</a>
+        <a href="#contact" class="hover:text-gold transition">Contact</a>
+        <a href="./Reels.html" class="hover:text-gold transition" target="_blank">Reels</a>
+      </div>
+      <button id="darkToggle" class="text-gold text-2xl md:ml-4">🌙</button>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden">
+      <img src="https://itcmaratha.besthotelsmumbai.com/data/Photos/OriginalPhoto/17099/1709933/1709933687.JPEG" alt="Restaurant ambiance" class="absolute inset-0 w-full h-full object-cover brightness-50" />
+      <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-transparent to-black/70"></div>
+      <div class="relative z-10 text-center px-4 max-w-4xl mx-auto">
+        <h1 class="text-5xl md:text-7xl font-display font-bold text-gold mb-4 drop-shadow-2xl animate-fade-up">Hotel Killedar</h1>
+        <p class="text-xl md:text-3xl text-white/90 italic mb-8 animate-fade-up" style="animation-delay: 0.2s;">Where Every Meal Feels Like Home</p>
+        <div class="flex flex-wrap justify-center gap-5 animate-fade-up" style="animation-delay: 0.4s;">
+          <a href="#menu" class="bg-gold text-black px-8 py-3 rounded-full font-semibold tracking-wide hover:bg-warm-orange transition transform hover:scale-105 shadow-xl">Explore Menu</a>
+          </div>
+      </div>
+      <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-float text-white text-sm">Scroll to discover ↓</div>
+    </section>
+
+    <!-- Why Choose Us / About short -->
+    <section id="about" class="py-20 px-6 max-w-7xl mx-auto text-center">
+      <h2 class="text-4xl font-display font-bold text-gold mb-6">Authentic Taste, Family Tradition</h2>
+      <p class="max-w-3xl mx-auto text-lg leading-relaxed opacity-90">Hotel Killedar blends rich Indian heritage with modern elegance. We serve vegetarian, non-vegetarian, and Chinese delights prepared with love. Every meal is a celebration of family and flavor.</p>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12">
+        <div class="glass-card rounded-2xl p-6"><span class="text-3xl font-display text-gold">1+</span><p class="text-sm mt-1">Years Experience</p></div>
+        <div class="glass-card rounded-2xl p-6"><span class="text-3xl font-display text-gold">60+</span><p class="text-sm mt-1">Dishes</p></div>
+        <div class="glass-card rounded-2xl p-6"><span class="text-3xl font-display text-gold">100%</span><p class="text-sm mt-1">Fresh Ingredients</p></div>
+        <div class="glass-card rounded-2xl p-6"><span class="text-3xl font-display text-gold">4.6</span><p class="text-sm mt-1">Google Rating</p></div>
+      </div>
+    </section>
+
+    <!-- Featured Dishes Carousel -->
+    <section class="py-16 px-4 max-w-7xl mx-auto">
+      <h2 class="text-4xl font-display font-bold text-center text-gold mb-10">Chef's Specials</h2>
+      <div class="swiper-container overflow-x-auto pb-4 flex space-x-6" id="featuredSlider">
+        <div class="min-w-[280px] glass-card rounded-2xl overflow-hidden menu-card"><img src="https://feelgoodfoodie.net/wp-content/uploads/2023/04/Easy-Butter-Chicken-08.jpg" class="menu-img h-48 w-full object-cover" alt="Butter Chicken"><div class="p-4"><span class="text-xs bg-gold text-black px-2 py-0.5 rounded-full">Popular</span><h3 class="font-semibold mt-2">Butter Chicken</h3><p class="text-sm opacity-75">Creamy tomato delight</p></div></div>
+        <div class="min-w-[280px] glass-card rounded-2xl overflow-hidden menu-card"><img src="https://www.madhuseverydayindian.com/wp-content/uploads/2022/11/easy-vegetable-biryani.jpg" class="menu-img h-48 w-full object-cover" alt="Biryani"><div class="p-4"><span class="text-xs bg-green-700 text-white px-2 py-0.5 rounded-full">Veg</span><h3 class="font-semibold mt-2">Veg Biryani</h3><p class="text-sm opacity-75">Aromatic basmati rice</p></div></div>
+        <div class="min-w-[280px] glass-card rounded-2xl overflow-hidden menu-card"><img src="https://3.bp.blogspot.com/-1XkdhL8Ane8/WrHqNH9_h3I/AAAAAAAAEgE/JvH54xdLsmYslOApY_rdhnD3DpDZUq-VACLcBGAs/s1600/DSC02794.JPG" class="menu-img h-48 w-full object-cover" alt="Manchurian"><div class="p-4"><span class="text-xs bg-red-600 text-white px-2 py-0.5 rounded-full">Non-Veg</span><h3 class="font-semibold mt-2">Chicken Manchurian</h3><p class="text-sm opacity-75">Indo-Chinese spicy</p></div></div>
+        <div class="min-w-[280px] glass-card rounded-2xl overflow-hidden menu-card"><img src="https://as2.ftcdn.net/v2/jpg/08/94/76/25/1000_F_894762571_KXz2mTpbcjHRGMg48iiU4CnI9v7La4EN.jpg" class="menu-img h-48 w-full object-cover" alt="Gulab Jamun"><div class="p-4"><span class="text-xs bg-gold text-black px-2 py-0.5 rounded-full">Dessert</span><h3 class="font-semibold mt-2">Gulab Jamun</h3><p class="text-sm opacity-75">Sweet & soft</p></div></div>
+      </div>
+    </section>
+
+    <!-- Menu Section with filters -->
+    <section id="menu" class="py-16 px-4 max-w-7xl mx-auto">
+      <h2 class="text-4xl font-display font-bold text-center text-gold mb-8">Our Specility</h2>
+      <div class="flex flex-wrap justify-center gap-3 mb-10" id="menuFilters">
+        <button class="filter-btn bg-gold text-black px-5 py-2 rounded-full font-medium" data-category="all">All</button>
+        <button class="filter-btn border border-gold text-gold px-5 py-2 rounded-full" data-category="indian">Indian</button>
+        <button class="filter-btn border border-gold text-gold px-5 py-2 rounded-full" data-category="chinese">Chinese</button>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="menuGrid"></div>
+    </section>
+
+    <!-- Gallery -->
+    <section id="gallery" class="py-16 px-4 max-w-7xl mx-auto">
+      <h2 class="text-4xl font-display font-bold text-center text-gold mb-10">Gallery</h2>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+        <img src="https://wallpapers.com/images/hd/food-4k-spdnpz7bhmx4kv2r.jpg" class="rounded-xl hover:scale-105 transition object-cover h-48 w-full" alt="Restaurant">
+        <img src="https://www.contiki.com/six-two/app/uploads/2024/03/IMG-20240318-WA0007-e1710844435378.jpg" class="rounded-xl hover:scale-105 transition object-cover h-48 w-full" alt="Restaurant">
+        <img src="https://th.bing.com/th/id/R.22fd015842c62beda447afea6ee89091?rik=sXYZ8hJMnUfgkg&riu=http%3a%2f%2fwww.hotelpresidentpune.com%2fimages%2ffood_5.jpg&ehk=4srgJpAdUG6VjI03LdWO6w6bSU%2bTODYcLC3aeUPnukg%3d&risl=&pid=ImgRaw&r=0" class="rounded-xl hover:scale-105 transition object-cover h-48 w-full" alt="Kitchen">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjoZJOyqrBeGEiIvwOJiS4ubQoVpVvnQlQZSIL6B7rKrucVOFQvE6Ms457IpMLi_Rxoz9_UBqkF7tn8QJ3pfJ3ountvGq4Ox__EXhyphenhyphenrKwITWjuiKOzaGqtr9I3_5Op9Rupuwx_XTyhVYvDzx18QUdpjMAnDtN9nEpscfH_bztIkiDAv83al7zahuio1-wBm/w1200-h630-p-k-no-nu/1000439496.jpg" class="rounded-xl hover:scale-105 transition object-cover h-48 w-full" alt="Family Dining">
+        <img src="https://images.ctfassets.net/3s5io6mnxfqz/6ZImCEzx6UuvuKaAiZEDDN/50479ee4a0902deb4eb1bab720ce248a/image1.jpg" class="rounded-xl hover:scale-105 transition object-cover h-48 w-full" alt="Event">
+        <img src="https://i.pinimg.com/originals/05/4c/c5/054cc5e6d1548f3d8d66e0fd6636ecaa.jpg" class="rounded-xl hover:scale-105 transition object-cover h-48 w-full" alt="Dish">
+      </div>
+    </section>
+
+
+    <!-- Testimonials slider -->
+    <section class="py-16 px-4 max-w-5xl mx-auto">
+      <h2 class="text-4xl font-display font-bold text-center text-gold mb-8">Guest Reviews</h2>
+      <div class="swiper-container flex overflow-x-auto space-x-6 pb-4" id="reviewSlider">
+        <div class="min-w-[300px] glass-card p-6 rounded-2xl"><div class="text-gold text-xl">★★★★★</div><p class="italic mt-2">"Best family dinner ever! Butter chicken is heavenly."</p><p class="font-semibold mt-3">- Priyanka S.</p></div>
+        <div class="min-w-[300px] glass-card p-6 rounded-2xl"><div class="text-gold text-xl">★★★★★</div><p class="italic mt-2">"Authentic taste and warm service. Feels like home."</p><p class="font-semibold mt-3">- Vishal D.</p></div>
+        <div class="min-w-[300px] glass-card p-6 rounded-2xl"><div class="text-gold text-xl">★★★★★</div><p class="italic mt-2">"Chinese platter was amazing. Highly recommended!"</p><p class="font-semibold mt-3">- Ananya K.</p></div>
+      </div>
+    </section>
+
+    <!-- Contact & Footer -->
+    <footer id="contact" class="bg-dark-brown text-cream py-16 px-6 mt-10">
+      <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
+        <div><h3 class="text-gold font-display text-2xl mb-3">Hotel Killedar</h3><p>Address:-</p><p>Opp. Kudal Bus Stand, Near Kudal Court</p><p>📞 +91 9422947316</p></div>
+        <div><h4 class="text-gold font-semibold mb-2">Hours</h4><p>Mon-Sun: 10am - 12pm</p></div>
+        <div><h4 class="text-gold font-semibold mb-2">Quick Links</h4><a href="#home" class="block hover:text-gold">Home</a><a href="#menu" class="block hover:text-gold">Our Specility</a></div>
+      </div>
+      <div class="text-center mt-10 text-sm opacity-70">© 2025 Hotel Killedar. All rights reserved.</div>
+    </footer>
+
+    <!-- Floating buttons -->
+    <a href="https://wa.me/919422947316" class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-2xl hover:scale-110 transition z-50 text-2xl">💬</a>
+    <a href="tel:+919422947316" class="fixed bottom-6 right-20 bg-gold text-black p-4 rounded-full shadow-2xl hover:scale-110 transition z-50 text-2xl">📞</a>
+    <button onclick="window.scrollTo({top:0,behavior:'smooth'})" class="fixed bottom-6 left-6 bg-dark-brown text-gold p-3 rounded-full shadow-xl z-50">↑</button>
+  </div>
+
+  <script>
+    // Dark mode toggle
+    const toggle = document.getElementById('darkToggle');
+    toggle.addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark');
+      toggle.textContent = document.documentElement.classList.contains('dark') ? '☀️' : '🌙';
+    });
+
+    // Navbar scroll effect
+    window.addEventListener('scroll', () => {
+      const nav = document.getElementById('navbar');
+      if (window.scrollY > 80) {
+        nav.classList.add('bg-dark-brown/90', 'backdrop-blur-md', 'shadow-lg');
+        nav.classList.remove('bg-transparent');
+      } else {
+        nav.classList.remove('bg-dark-brown/90', 'backdrop-blur-md', 'shadow-lg');
+        nav.classList.add('bg-transparent');
+      }
+    });
+
+    // Menu data
+    const menuItems = [
+      {name:"Paneer Butter Masala", cat:"indian", desc:"Rich & spicy", badge:"Veg", img:"https://www.ruchiskitchen.com/wp-content/uploads/2020/12/Paneer-butter-masala-recipe-3.jpg.webp"},
+      {name:"Dal Fry", cat:"indian", desc:"Yellow lentil tempering", badge:"Veg", img:"https://i2.wp.com/vegecravings.com/wp-content/uploads/2018/02/Dal-Fry-Recipe-Step-By-Step-Instructions.jpg?fit=1629%2C1683&quality=65&strip=all&ssl=1"},
+      {name:"Biryani", cat:"indian", desc:"Fragrant basmati", badge:"Non-Veg", img:"https://www.cubesnjuliennes.com/wp-content/uploads/2020/07/Chicken-Biryani-Recipe.jpg"},
+      {name:"Veg Fried Rice", cat:"chinese", desc:"Wok tossed", badge:"Veg", img:"https://www.awesomecuisine.com/wp-content/uploads/2015/06/Vegetable-Fried-Rice.jpg"},
+      {name:"Chicken Manchurian", cat:"chinese", desc:"Spicy & tangy", badge:"Non-Veg", img:"https://3.bp.blogspot.com/-1XkdhL8Ane8/WrHqNH9_h3I/AAAAAAAAEgE/JvH54xdLsmYslOApY_rdhnD3DpDZUq-VACLcBGAs/s1600/DSC02794.JPG"},
+      {name:"Chiken Tikka Masala", cat:"indian", desc:"Rich & spicy", badge:"Non-Veg", img:"https://tse1.mm.bing.net/th/id/OIP.jGdycTk_YqlC2lSKe5x-JwHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"},
+      {name:"Paneer Tikka", cat:"indian", desc:"Spicy & tangy", badge:"Veg", img:"https://justsosavory.com/wp-content/uploads/2025/07/04-Paneer-Tikka-Masala.png"},
+      {name:"Mashroom Tikka", cat:"indian", desc:"Spicy & tangy", badge:"Veg", img:"https://tse2.mm.bing.net/th/id/OIP.1_ywSrIZDQuw0lHUiMAd9AHaFk?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"},
+      {name:"Veg Seek Kabab", cat:"indian", desc:"Spicy & tangy", badge:"Veg", img:"https://images.slurrp.com/prod/recipe_images/transcribe/snacks/Veg-Seekh-Kabab.webp"},
+    ];
+
+    const menuGrid = document.getElementById('menuGrid');
+    function renderMenu(category = 'all') {
+      const filtered = category === 'all' ? menuItems : menuItems.filter(i => i.cat === category);
+      menuGrid.innerHTML = filtered.map(item => `
+        <div class="glass-card rounded-2xl overflow-hidden menu-card hover-lift">
+          <img src="${item.img}" class="menu-img h-44 w-full object-cover" alt="${item.name}">
+          <div class="p-4">
+            <span class="text-xs px-2 py-0.5 rounded-full ${item.badge==='Veg'?'bg-green-700 text-white':'bg-red-600 text-white'}">${item.badge}</span>
+            <h3 class="font-semibold mt-2 text-lg">${item.name}</h3>
+            <p class="text-sm opacity-75">${item.desc}</p>
+            <p class="text-gold font-bold mt-2">${item.price}</p>
+          </div>
+        </div>
+      `).join('');
+    }
+    renderMenu();
+
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.replace('bg-gold','border'));
+        this.classList.add('bg-gold','text-black');
+        renderMenu(this.dataset.category);
+      });
+    });
+
+    // Simple slider scroll hint
+    document.querySelectorAll('.swiper-container').forEach(c => {
+      c.addEventListener('wheel', (e) => {
+        e.preventDefault();
+        c.scrollLeft += e.deltaY;
+      });
+    });
+  </script>
+</body>
+</html>
